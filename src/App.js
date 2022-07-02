@@ -1,23 +1,26 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 function App() {
+  let [글제목, 글제목변경] = useState([
+    '남자코트 추천',
+    '강남 우동맛집',
+    '파이썬 독학',
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div className='black-nav'>
+        <h4>React Blog</h4>
+      </div>
+      {글제목.map((글제목, i) => {
+        return (
+          <div className='list'>
+            <h4>{글제목}</h4>
+            <p>7월 2일 발행</p>
+          </div>
+        );
+      })}
     </div>
   );
 }
